@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Wisuda</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="starfield" aria-hidden="true"></div>
+  <audio id="backgroundMusic" loop preload="auto">
+    <source src="assets/music/graduation.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="overlay" id="introOverlay">
+    <div class="overlay-card">
+      <div class="overlay-image">
+        <img src="foto.jpg" alt="Foto Al Hamid Putra">
+      </div>
+      <div class="overlay-info">
+        <h1 class="overlay-title">Undangan Wisuda</h1>
+        <div class="to-box">
+          <span>With Pleasure:</span>
+          <strong id="guestNameDisplay">Nama Tamu Undangan</strong>
+        </div>
+        <p class="overlay-text">Tidak semua perjalanan selalu mudah untuk dilalui. Ada langkah yang penuh keyakinan, ada pula langkah yang diiringi keraguan. Namun, setiap proses telah mengajarkan bahwa impian tidak pernah mengkhianati perjuangan ✨. Hari ini, satu bab perjalanan itu telah sampai pada titik yang indah 🎓, dan saya ingin berbagi kebahagiaan tersebut bersama orang-orang yang selalu percaya dan mendoakan setiap langkah saya 🙏❤️.</p>
+        <p class="share-note">Dengan Hormat, Al Hamid Putra</p>
+        <div class="photo-grid">
+          <div class="photo-item"><img src="foto1.jpeg" alt="Foto dokumentasi 1"></div>
+          <div class="photo-item"><img src="foto1.2.jpeg" alt="Foto dokumentasi 2"></div>
+        </div>
+        <button class="button open-button" id="openInvitationButton">Open Invitation</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container hidden" id="invitationContent">
+    <p class="subtitle">Undangan Wisuda III Universitas Andalas Tahun 2026</p>
+
+    <h1>Al Hamid Putra, S.T.</h1>
+    <h2>Sarjana Teknik Industri</h2>
+    <h3>Universitas Andalas</h3>
+
+    <div class="profile-card">
+      <p>✨ <em>"Hari ini bukan sekadar tentang menyelesaikan pendidikan, tetapi tentang mensyukuri setiap perjalanan."</em> ✨</p>
+    </div>
+
+    <div class="photo-stage-grid">
+
+    <div class="photo-item">
+        <h3 class="stage-title">Sempro</h3>
+        <div class="photo-thumb">
+            <img src="Sempro.jpeg" alt="Sempro">
+        </div>
+    </div>
+
+    <div class="photo-item">
+        <h3 class="stage-title">Semhas</h3>
+        <div class="photo-thumb">
+            <img src="Semhas.jpeg" alt="Semhas">
+        </div>
+    </div>
+
+</div>
+
+<h2 class="main-stage-title">Sidang Sarjana</h2>
+
+<div class="photo-stage-grid">
+
+    <div class="photo-item">
+        <div class="photo-thumb">
+            <img src="Sidang1.jpeg" alt="Sidang 1">
+        </div>
+    </div>
+
+    <div class="photo-item">
+        <div class="photo-thumb">
+            <img src="Sidang2.jpg" alt="Sidang 2">
+        </div>
+    </div>
+
+</div>
+
+    <div class="story-center">
+    <p class="story-paragraph">
+        ✨ Hidup bukan tentang seberapa cepat kita sampai, melainkan tentang bagaimana kita menikmati setiap langkah yang mengantarkan kita ke tujuan. 🌠
+    </p>
+</div>
+
+    <p class="opening">
+      Dengan hormat mengundang Bapak/Ibu/Saudara/i untuk hadir pada wisuda saya.
+    </p>
+
+    <div class="card">
+      <h2>Detail Acara</h2>
+      <p><strong>Hari/Tanggal:</strong> Minggu, 12 Juli 2026</p>
+      <p><strong>Waktu:</strong> 13.00 WIB - Selesai</p>
+      <p><strong>Tempat:</strong> Departemen Teknik Industri</p>
+    </div>
+
+    <div class="countdown">
+      <h2>Menuju Hari Wisuda</h2>
+      <p id="timer">Loading...</p>
+    </div>
+
+    <div class="guestbook-card">
+      <h3>Berikan Ucapan</h3>
+      <form id="guestbookForm" class="guestbook-form">
+        <input type="text" id="guestName" name="guestName" placeholder="Nama Anda" required>
+        <textarea id="guestMessage" name="guestMessage" rows="4" placeholder="Tulis ucapan atau doa untuk wisuda saya" required></textarea>
+        <button type="submit" class="button whatsapp">Kirim ke WhatsApp</button>
+      </form>
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&query=Departemen+Teknik+Industri+Universitas+Andalas" class="button maps" target="_blank" rel="noopener noreferrer">
+      Lihat Lokasi
+    </a>
+
+    <p class="story-paragraph">
+    🌿 Hari ini, saya berhenti sejenak, bukan untuk mengakhiri perjalanan, tetapi untuk mensyukuri sejauh apa langkah ini telah membawa saya. ✨🤍
+    </p>
+
+
+    <p class="story-paragraph">
+      ✨ Izinkan saya berbagi kebahagiaan ini bersama Anda, yang dengan doa, dukungan, dan kasih sayangnya telah menjadi bagian dari perjalanan tersebut.🌟🙏
+    </p>
+
+    <div class="page-navigation">
+      <button class="button prev-button" id="prevButton">Prev</button>
+      <button class="button next-button" id="nextButton" aria-label="Next">Next</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3: Contact and English invitation message -->
+  <div class="container hidden" id="page3">
+    <h2>Contact & Invitation</h2>
+    <p class="english-invite">It is my honor to invite you to attend my graduation. See you at July 12, 2026.</p>
+
+    <a href="https://wa.me/6282268667440" class="button whatsapp" target="_blank">
+      Konfirmasi Kehadiran
+    </a>
+
+    <div class="contact-list">
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/alhamid_ptr" target="_blank" rel="noopener noreferrer">@alhamidp_ptr</a></p>
+      <p><strong>Email:</strong> <a href="mailto:alhamidputra54@email.com">alhamidputra54@gmail.com</a></p>
+    </div>
+
+    <div class="photo-panel">
+      <h2>Salam Hangat</h2>
+      <div class="photo-panel-grid">
+        <div class="photo-thumb"><img src="foto4.jpg" alt="Foto penutup 1"></div>
+        <div class="photo-thumb"><img src="Sidang3.1.jpeg" alt="Foto penutup 2"></div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:22px;">
+      <button class="button" id="backToInvite">Back to Invitation</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+
+
+</body>
+</html>
