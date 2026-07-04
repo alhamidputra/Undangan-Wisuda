@@ -981,7 +981,7 @@ h3 {
     border-radius:999px;
 
     background:linear-gradient(
-        to bottom,
+        to top,
         rgba(255,255,255,1),
         rgba(255,255,255,.75),
         rgba(255,255,255,0)
