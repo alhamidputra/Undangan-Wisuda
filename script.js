@@ -140,7 +140,7 @@ const invitationContent = document.getElementById('invitationContent');
 const guestbookForm = document.getElementById('guestbookForm');
 const guestNameDisplay = document.getElementById('guestNameDisplay');
 const backgroundMusic = document.getElementById("backgroundMusic");
-const whatsappNumber = '6282268667440';
+
 
 function getRecipientName() {
   const params = new URLSearchParams(window.location.search);
@@ -160,7 +160,6 @@ if (openButton && introOverlay && invitationContent) {
     invitationContent.classList.remove("hidden");
 
     backgroundMusic.play().catch(() => {});
-    updateMusicButton();
 
   });
 }
