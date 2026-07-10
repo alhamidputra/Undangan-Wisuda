@@ -1,3 +1,14 @@
+import { db } from "./firebase.js";
+
+import {
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  orderBy,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
 const targetDate = new Date("July 12, 2026 13:00:00").getTime();
 
 const countdown = setInterval(function () {
