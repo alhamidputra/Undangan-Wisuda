@@ -177,25 +177,33 @@ if (openButton && introOverlay && invitationContent) {
 
 if (guestbookForm) {
 
-    guestbookForm.addEventListener("submit", function(e){
+    guestbookForm.addEventListener("submit", async (e) => {
 
         e.preventDefault();
 
-        const nama = document.getElementById("guestName").value;
-        const pesan = document.getElementById("guestMessage").value;
+        const nama = document.getElementById("guestName").value.trim();
+        const pesan = document.getElementById("guestMessage").value.trim();
 
-        const card = document.createElement("div");
+        if (!nama || !pesan) return;
 
-        card.className = "message-card";
+        try {
 
-        card.innerHTML = `
-            <h5>🌟 ${nama}</h5>
-            <p>${pesan}</p>
-        `;
+            await addDoc(collection(db, "ucapan"), {
+                nama: nama,
+                pesan: pesan,
+                waktu: serverTimestamp()
+            });
 
-        document.getElementById("guestMessages").appendChild(card);
+            guestbookForm.reset();
 
-        guestbookForm.reset();
+            loadMessages();
+
+        } catch (err) {
+
+            console.error(err);
+            alert("Gagal mengirim ucapan.");
+
+        }
 
     });
 
@@ -235,3 +243,39 @@ if (backToInvite && invitationContent && page3) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
+async function loadMessages() {
+
+    const container = document.getElementById("guestMessages");
+
+    container.innerHTML = `
+        <h4>Ucapan Sahabat & Keluarga</h4>
+    `;
+
+    const q = query(
+        collection(db, "ucapan"),
+        orderBy("waktu", "desc")
+    );
+
+    const snapshot = await getDocs(q);
+
+    snapshot.forEach((doc) => {
+
+        const data = doc.data();
+
+        const card = document.createElement("div");
+
+        card.className = "message-card";
+
+        card.innerHTML = `
+            <h5>🌟 ${data.nama}</h5>
+            <p>${data.pesan}</p>
+        `;
+
+        container.appendChild(card);
+
+    });
+
+}
+// Ambil semua ucapan dari Firebase saat halaman dibuka
+loadMessages();
