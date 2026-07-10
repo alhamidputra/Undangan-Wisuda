@@ -166,17 +166,29 @@ if (openButton && introOverlay && invitationContent) {
 }
 
 if (guestbookForm) {
-  guestbookForm.addEventListener('submit', function (event) {
-    event.preventDefault();
 
-    const nameField = document.getElementById('guestName');
-    const messageField = document.getElementById('guestMessage');
-    const name = nameField ? nameField.value.trim() : '';
-    const message = messageField ? messageField.value.trim() : '';
+    guestbookForm.addEventListener("submit", function(e){
 
-    const text = encodeURIComponent(`Assalamualaikum, saya ${name || 'seorang sahabat'} ingin mengucapkan:\n\n${message || 'Selamat wisuda, semoga sukses selalu.'}`);
-    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
-  });
+        e.preventDefault();
+
+        const nama = document.getElementById("guestName").value;
+        const pesan = document.getElementById("guestMessage").value;
+
+        const card = document.createElement("div");
+
+        card.className = "message-card";
+
+        card.innerHTML = `
+            <h5>🌟 ${nama}</h5>
+            <p>${pesan}</p>
+        `;
+
+        document.getElementById("guestMessages").appendChild(card);
+
+        guestbookForm.reset();
+
+    });
+
 }
 
 // Prev button on invitation page — return to intro overlay
